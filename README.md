@@ -2,4 +2,14 @@
 
 ## Node v14.21.3
 
-## Webpack, SCSS, Swiper, Accordion, Timer, Animation, SmoothScroll, change Language.
+https://sergey-horoshko.github.io/landing_ragnarok/
+
+- Webpack 5
+- SCSS
+- Swiper
+- Timer
+- Animation
+- SmoothScroll
+- Modal
+- Change Language(little bit)
+
