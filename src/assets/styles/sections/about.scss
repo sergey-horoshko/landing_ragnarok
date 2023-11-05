@@ -1,0 +1,69 @@
+@import "../colors";
+@import "../mixins.scss";
+
+.video {
+  position: relative;
+  margin-top: 32px;
+  transition: transform 0.5s;
+  transform: scale(1);
+
+  video {
+    width: 100%;
+    height: auto;
+  }
+
+  &-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+
+    &.hidden {
+      opacity: 0;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &-title {
+    font-weight: 500;
+    font-size: 50px;
+    color: $white;
+    line-height: 39px;
+  }
+
+  &-btn {
+    background: $dark;
+    border-radius: 6px;
+    padding: 9px 26px;
+    font-weight: 500;
+    line-height: 16px;
+    color: $white;
+    display: inline-block;
+    cursor: pointer;
+    margin: 28px auto 0 auto;
+    transition: background 0.25s;
+    text-transform: uppercase;
+
+    &:hover {
+      background: #525c67;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .video-title {
+    font-size: 28px;
+    line-height: 120%;
+  }
+}
+
+@media (max-width: 500px) {
+  .video-title {
+    font-size: 22px;
+  }
+}

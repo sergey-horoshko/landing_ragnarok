@@ -1,0 +1,102 @@
+@import "../colors";
+@import "../mixins.scss";
+
+.dual {
+  column-gap: 5%;
+  margin-top: 20px;
+  transition: column-gap 0.5s;
+
+  &-description {
+    max-width: 410px;
+
+    p {
+      color: $sea;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 22px;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    &__info {
+      margin-top: 19px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__price {
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 36px;
+    }
+
+    &__button {
+      @include button($orange);
+      @include hoverOrange;
+      padding: 14px 19px;
+      font-weight: 500;
+    }
+  }
+
+  &-img {
+    max-width: 50%;
+    position: relative;
+
+    img {
+      max-width: fit-content;
+      animation: gravitation 1.5s linear infinite alternate;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 194px;
+      height: 119px;
+      background: rgba(79, 96, 152, 0.8);
+      filter: blur(75px);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .dual {
+    flex-direction: column-reverse;
+
+    &-img {
+      margin-bottom: 24px;
+      max-width: 250px;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .dual {
+    text-align: center;
+
+    &-description__info {
+      gap: 16px;
+      flex-direction: column;
+    }
+  }
+}
+
+@keyframes gravitation {
+  0% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

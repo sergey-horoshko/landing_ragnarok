@@ -1,0 +1,32 @@
+.section {
+  &.hidden {
+    .editions {
+      &-item {
+        transition: transform 0s;
+        transform: translateX(-2000px);
+      }
+    }
+
+    h2 {
+      transition: opacity 0s;
+      opacity: 0;
+    }
+
+    .dual,
+    .explore-info {
+      transition: column-gap 0s;
+      column-gap: 250%;
+    }
+
+    .video {
+      transition: transform 0s;
+      transform: scale(0);
+    }
+
+    .news,
+    .faq-item {
+      transition: transform 0s;
+      transform: translateX(-200%);
+    }
+  }
+}

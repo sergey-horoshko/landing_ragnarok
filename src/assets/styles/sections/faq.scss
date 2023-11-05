@@ -1,0 +1,83 @@
+@import "../colors";
+@import "../mixins.scss";
+
+.faq {
+  &-items {
+    flex-direction: column;
+    row-gap: 32px;
+    margin-top: 30px;
+  }
+
+  &-item {
+    transition: transform 0.4s;
+    transform: translate(0);
+
+    &:nth-child(2) {
+      transition-delay: 0.25s;
+    }
+
+    &:last-child {
+      transition-delay: 0.5s;
+    }
+
+    &__header {
+      width: 100%;
+      justify-content: space-between;
+      font-weight: 600;
+      font-size: 17px;
+      line-height: 20px;
+      color: $white;
+      cursor: pointer;
+      border-bottom: 2px solid $violet;
+      padding-bottom: 8px;
+
+      p {
+        padding-right: 16px;
+      }
+
+      span {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #8c96a0;
+        border-radius: 6px;
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        min-height: 30px;
+
+        &:before {
+          font-size: 25px;
+          content: "+";
+          transition: transform 0.25s;
+        }
+      }
+    }
+
+    &__content {
+      height: 0;
+      opacity: 0;
+      transition: height 0.25s, opacity 0.25s;
+
+      p {
+        padding-top: 13px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+
+        span {
+          color: #ff4136;
+        }
+      }
+    }
+
+    &.opened {
+      span {
+        &:before {
+          transform: rotate(45deg);
+        }
+      }
+
+      .faq-item__content {
+        opacity: 1;
+      }
+    }
+  }
+}

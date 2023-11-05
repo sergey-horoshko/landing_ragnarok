@@ -1,0 +1,120 @@
+@import "../colors";
+@import "../mixins.scss";
+
+.news {
+  margin-top: 32px;
+  transition: transform 0.5s;
+  transform: translate(0);
+
+  &-item {
+    background: linear-gradient(177.87deg, #30373f 41.63%, #141615 185.57%);
+    border-radius: 6px;
+    padding: 20px;
+
+    &__info {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__subtitle {
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 12px;
+      text-transform: uppercase;
+      color: $violet;
+    }
+
+    &__date {
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 17px;
+      color: $grey;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: 19px;
+      line-height: 23px;
+      text-transform: uppercase;
+      color: $white;
+      margin: 7px 0 16px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    &__description {
+      column-gap: 24px;
+      height: 248px;
+      align-items: flex-start;
+    }
+
+    &__img {
+      min-width: 278px;
+      height: 100%;
+      @include bg;
+    }
+
+    &__text {
+      flex-direction: column;
+      height: 100%;
+
+      p {
+        color: #d9d9d9;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 17px;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+    }
+
+    &__button {
+      background: $grey;
+      border-radius: 6px;
+      font-weight: 500;
+      font-size: 13px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $white;
+      margin-top: 10px;
+      padding: 8px 30px;
+      display: flex;
+      width: max-content;
+      margin-left: auto;
+      margin-top: auto;
+      transition: background 0.25s;
+
+      &:hover {
+        background: $dark;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .news {
+    &-item {
+      &__img {
+        width: 100%;
+      }
+
+      &__description {
+        flex-direction: column;
+        gap: 30px;
+        height: 600px;
+      }
+
+      &__text {
+        height: auto;
+      }
+
+      &__button {
+        margin-top: 26px;
+      }
+    }
+  }
+}
